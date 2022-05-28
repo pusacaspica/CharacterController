@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,9 +9,9 @@ public class PlayerController : MonoBehaviour
     public float velocity = 2f;
     public List<Camera> cameras;
     public float roll = 10.0f;
-    public float jumpSpeed, maxGravity, deltaGravity;
+    public float jumpSpeed, maxGravity, deltaGravity, upperRotationLimit, lowerRotationLimit;
 
-    private float mouseX, mouseY, mousePosX, mousePosY, gravity;
+    private float mouseX, mouseY, mousePosX, mousePosY, gravity, rotY;
     private CharacterController characterController;
 
     // Start is called before the first frame update
@@ -20,7 +21,7 @@ public class PlayerController : MonoBehaviour
         characterController = this.GetComponent<CharacterController>();
         mousePosX = Input.mousePosition.x;
         mousePosY = Input.mousePosition.y;
-
+        rotY = 0.0f;
         Cursor.lockState = CursorLockMode.Confined;
     }
 
@@ -31,18 +32,21 @@ public class PlayerController : MonoBehaviour
         //if(characterController.isGrounded){
 
             mouseX = Input.mousePosition.x - mousePosX;
-            mouseY = Input.mousePosition.y - mousePosY;
+            rotY += Input.GetAxis("Mouse Y") * roll;
+            rotY = Math.Clamp(rotY, lowerRotationLimit, upperRotationLimit);
+            //mouseY = Input.mousePosition.y - mousePosY;
             this.transform.Rotate(0, mouseX*roll*Time.deltaTime, 0);
-            turnable.Rotate(-mouseY*roll*Time.deltaTime, 0, 0);
+            turnable.localEulerAngles = new Vector3(rotY, turnable.localEulerAngles.y, turnable.localEulerAngles.z);
+            //turnable.Rotate(-mouseY*roll*Time.deltaTime, 0, 0);
 
             moveDirection *= velocity;
 
-            if(Input.GetButton("Jump")){
+            if(Input.GetButton("Jump") && characterController.isGrounded){
                 moveDirection.y += jumpSpeed;
             }
 
             mousePosX = Input.mousePosition.x;
-            mousePosY = Input.mousePosition.y;
+            //mousePosY = Input.mousePosition.y;
 
             if(!characterController.isGrounded) gravity += deltaGravity;
             else gravity = 0.0f;
