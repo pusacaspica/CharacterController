@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class Gun : MonoBehaviour
 {
-    public string name;
+    public string gunName;
     public Rigidbody projectile;
     public Transform barrel;
     public float projectileSpeed;
