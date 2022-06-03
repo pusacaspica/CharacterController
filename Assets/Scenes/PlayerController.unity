@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -108,8 +108,8 @@ NavMeshSettings:
     agentTypeID: 0
     agentRadius: 1
     agentHeight: 2
-    agentSlope: 45
-    agentClimb: 0.4
+    agentSlope: 35
+    agentClimb: 0.5
     ledgeDropHeight: 1
     maxJumpAcrossDistance: 1
     minRegionArea: 2
@@ -479,6 +479,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 285260632}
+  - component: {fileID: 285260633}
   m_Layer: 0
   m_Name: Breadcrumb3
   m_TagString: Untagged
@@ -501,6 +502,20 @@ Transform:
   m_Father: {fileID: 185875803}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &285260633
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 285260631}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.92
+  m_Height: 2.92
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &368257059
 GameObject:
   m_ObjectHideFlags: 0
@@ -642,6 +657,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 466842974}
+  - component: {fileID: 466842975}
   m_Layer: 0
   m_Name: Breadcrumb2
   m_TagString: Untagged
@@ -664,6 +680,20 @@ Transform:
   m_Father: {fileID: 185875803}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &466842975
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 466842973}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.92
+  m_Height: 2.92
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &623472742
 GameObject:
   m_ObjectHideFlags: 0
@@ -1103,7 +1133,7 @@ Transform:
   - {fileID: 1458721069}
   - {fileID: 163288388}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!143 &763373520
 CharacterController:
@@ -1256,7 +1286,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1043007526
 GameObject:
@@ -1326,7 +1356,7 @@ Transform:
   - {fileID: 1254317610}
   - {fileID: 185875803}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1074449319
 GameObject:
@@ -1342,6 +1372,7 @@ GameObject:
   - component: {fileID: 1074449322}
   - component: {fileID: 1074449321}
   - component: {fileID: 1074449320}
+  - component: {fileID: 1074449326}
   m_Layer: 0
   m_Name: NPC (1)
   m_TagString: Untagged
@@ -1357,7 +1388,7 @@ NavMeshAgent:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1074449319}
   m_Enabled: 1
-  m_AgentTypeID: 1479372276
+  m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 3.5
   m_Acceleration: 8
@@ -1387,6 +1418,7 @@ MonoBehaviour:
   - {fileID: 2123371535}
   - {fileID: 466842974}
   - {fileID: 285260632}
+  goal: 0
 --- !u!136 &1074449322
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1466,6 +1498,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1074449326
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1074449319}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1221600798
 GameObject:
   m_ObjectHideFlags: 0
@@ -1741,6 +1789,7 @@ GameObject:
   - component: {fileID: 1422133358}
   - component: {fileID: 1422133357}
   - component: {fileID: 1422133356}
+  - component: {fileID: 1422133362}
   m_Layer: 0
   m_Name: NPC (2)
   m_TagString: Untagged
@@ -1756,7 +1805,7 @@ NavMeshAgent:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1422133355}
   m_Enabled: 1
-  m_AgentTypeID: 1479372276
+  m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 3.5
   m_Acceleration: 8
@@ -1786,6 +1835,7 @@ MonoBehaviour:
   - {fileID: 2123371535}
   - {fileID: 466842974}
   - {fileID: 285260632}
+  goal: 1
 --- !u!136 &1422133358
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1865,6 +1915,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1422133362
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1422133355}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1458721068
 GameObject:
   m_ObjectHideFlags: 0
@@ -2160,6 +2226,7 @@ GameObject:
   - component: {fileID: 1816214784}
   - component: {fileID: 1816214783}
   - component: {fileID: 1816214782}
+  - component: {fileID: 1816214788}
   m_Layer: 0
   m_Name: NPC (3)
   m_TagString: Untagged
@@ -2175,7 +2242,7 @@ NavMeshAgent:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1816214781}
   m_Enabled: 1
-  m_AgentTypeID: 1479372276
+  m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 3.5
   m_Acceleration: 8
@@ -2205,6 +2272,7 @@ MonoBehaviour:
   - {fileID: 2123371535}
   - {fileID: 466842974}
   - {fileID: 285260632}
+  goal: 2
 --- !u!136 &1816214784
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2284,6 +2352,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1816214788
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1816214781}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1939104913
 GameObject:
   m_ObjectHideFlags: 0
@@ -2519,6 +2603,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2123371535}
+  - component: {fileID: 2123371536}
   m_Layer: 0
   m_Name: Breadcrumb1
   m_TagString: Untagged
@@ -2541,3 +2626,17 @@ Transform:
   m_Father: {fileID: 185875803}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &2123371536
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123371534}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.92
+  m_Height: 2.92
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
