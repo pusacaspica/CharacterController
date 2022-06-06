@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NPCController : MonoBehaviour
+public class NPCPursuer : MonoBehaviour
 {
     public Transform goal;
     // Start is called before the first frame update
