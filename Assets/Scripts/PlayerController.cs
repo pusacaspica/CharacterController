@@ -11,12 +11,14 @@ public class PlayerController : MonoBehaviour
     public float roll = 10.0f;
     public float jumpSpeed, maxGravity, deltaGravity, upperRotationLimit, lowerRotationLimit;
 
+    private Animator anim;
     private float mouseX, mouseY, mousePosX, mousePosY, gravity, rotY;
     private CharacterController characterController;
 
     // Start is called before the first frame update
     void Start()
     {
+        anim = GetComponent<Animator>();
         gravity = 0.0f;
         characterController = this.GetComponent<CharacterController>();
         mousePosX = Input.mousePosition.x;
